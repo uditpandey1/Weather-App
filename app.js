@@ -14,7 +14,7 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
 
     const cityName = req.body.city;                                                                                            //stores city name entered
-
+console.log(process.env);
     const apiKey = process.env.API_KEY;                                                                                        //api key
 
     const units = "metric";                                                                                                    //temperature unit - celsius
