@@ -14,7 +14,7 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
 
     const cityName = req.body.city;                                                                                            //stores city name entered
-console.log(process.env);
+
     const apiKey = process.env.API_KEY;                                                                                        //api key
 
     const units = "metric";                                                                                                    //temperature unit - celsius
@@ -31,7 +31,8 @@ console.log(process.env);
             var temp = weatherData.main.temp;                                                              //stores temperature value
             const icon = weatherData.weather[0].icon;                                                      //stores weather icon
             const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";                       //URL for weather icon
-res.setHeader('Content-type','text/html')
+            
+            res.setHeader('Content-type','text/html')
             res.write("<h1>weather is " + temp + " degree celsius</h1>");                                  //weather result heading
             res.write("<img src=" + imageURL + ">");                                                       //weather icon image
 
