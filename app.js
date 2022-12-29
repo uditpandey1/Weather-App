@@ -31,7 +31,7 @@ console.log(process.env);
             var temp = weatherData.main.temp;                                                              //stores temperature value
             const icon = weatherData.weather[0].icon;                                                      //stores weather icon
             const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";                       //URL for weather icon
-
+res.setHeader('Content-type','text/html')
             res.write("<h1>weather is " + temp + " degree celsius</h1>");                                  //weather result heading
             res.write("<img src=" + imageURL + ">");                                                       //weather icon image
 
